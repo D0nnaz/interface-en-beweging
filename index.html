@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>✨Qurkis✨</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Click on of the buttons below to start the story</h1>
+    <video id="loading" class="video" preload="auto" muted>
+        <source src="./video/loading.mp4" type="video/mp4">
+    </video>
+
+    <div class="curtain hidden">
+        <div class="panel-left"></div>
+        <div class="panel-right"></div>
+    </div>
+    <div class="button-container hidden">
+        <div class="video-button" id="button1">
+            <video autoplay loop muted>
+                <source src="./video/buttons/mic-icon.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-button" id="button2">
+            <video autoplay loop muted>
+                <source src="./video/buttons/juggle-icon.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-button" id="button3">
+            <video class="trapeze-icon" autoplay loop muted>
+                <source src="./video/buttons/trapeze-icon.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <video id="video1" class="video hidden" preload="none">
+        <source src="./video/animations/scene1.mp4" type="video/mp4">
+    </video>
+    <video id="video2" class="video hidden" preload="none">
+        <source src="./video/animations/scene2.mp4" type="video/mp4">
+    </video>
+    <video id="video3" class="video hidden" preload="none">
+        <source src="./video/animations/scene3.mp4" type="video/mp4">
+    </video>
+</body>
+
+<script src="script.js"></script>
+
+</html>

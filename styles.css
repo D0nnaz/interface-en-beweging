@@ -1,0 +1,158 @@
+* {
+    cursor: url(/images/quokkacursor.png) 25 25, auto;
+}
+
+@font-face {
+    font-family: 'QuentinCaps';
+    src: url('./font/QuentinCaps.ttf') format('truetype');
+}
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #FDF1D6;
+    z-index: -2;
+    font-family: 'QuentinCaps', sans-serif;
+}
+
+
+h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #C12126;
+    font-size: 5em;
+    text-align: center;
+    font-style: normal;
+    font-weight: 100;
+}
+
+video {
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    max-height: 100vh;
+    z-index: 100;
+    background-size: cover;
+    top: 0;
+}
+
+
+.curtain {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    overflow: hidden;
+    z-index: 1;
+
+}
+
+
+.panel-left,
+.panel-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    transition: all 8s ease;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'> <filter id='filter'> <feTurbulence baseFrequency='0.01 0.0001' numOctaves='5'/> <feColorMatrix values='1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1'/></filter> <rect width='100%' height='100%' filter='url(%23filter)'/> </svg>");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.panel-left {
+    left: 0;
+    animation: slideLeft 8s forwards;
+}
+
+.panel-right {
+    right: 0;
+    animation: slideRight 8s forwards;
+}
+
+@keyframes slideLeft {
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slideRight {
+    to {
+        transform: translateX(100%);
+    }
+}
+
+
+
+.hidden {
+    display: none;
+}
+
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: grayscale(100%);
+}
+
+.button-container {
+    position: absolute;
+    bottom: 2em;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 200;
+    gap: 5em;
+}
+
+.video-button {
+    position: relative;
+    width: 7em;
+    height: 7em;
+    overflow: hidden;
+    border-radius: 100%;
+    opacity: 0;
+    animation: slideUp 1s forwards;
+}
+
+.video-button:hover {
+    filter: invert(1);
+    transition: ease-in-out 0.5s;
+}
+
+
+.video-button video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+#button1 {
+    animation-delay: 12s;
+}
+
+#button2 {
+    animation-delay: 13s;
+}
+
+#button3 {
+    animation-delay: 14s;
+}
+
+@keyframes slideUp {
+    to {
+        transform: translateY(-20px);
+        opacity: 1;
+    }
+}
